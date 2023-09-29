@@ -1,6 +1,6 @@
-const meetingService = require('../services/meeting.service');
+const meetingService = require('../service/meeting-service');
 
-exports.statrtMeeting = (req, res, next) => {
+exports.startMeeting = (req, res, next) => {
     const { hostId, hostName } = req.body;
 
     var model = {
@@ -10,7 +10,7 @@ exports.statrtMeeting = (req, res, next) => {
     };
 
 
-    meetingService.statrtMeeting(model, (error, results) => {
+    meetingService.startMeeting(model, (error, results) => {
         if (error) {
             return next(error);
         }
